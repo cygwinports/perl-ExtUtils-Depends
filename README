@@ -4,10 +4,10 @@ This module tries to make it easy to build Perl extensions that use
 functions and typemaps provided by other perl extensions. 
 
 Runtime requirements:
-  perl-5.10.0-3
+  perl-5.10.0-5
 
 Additional build requirements:
-  cygport-0.3.9-1
+  cygport-0.3.13-1
   make-3.81-1
 
 Canonical homepage:
@@ -42,6 +42,9 @@ Files included in the binary package:
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.300-2 -----
+Patch to handle linking inter-module dependencies OOTB.
 
 ----- version 0.300-1 -----
 Version bump, build for perl-5.10.

@@ -1,0 +1,3 @@
+inherit gtk2-perl
+
+PATCH_URI="0.300-dep-libs.patch"

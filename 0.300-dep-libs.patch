@@ -1,0 +1,30 @@
+--- origsrc/ExtUtils-Depends-0.300/lib/ExtUtils/Depends.pm	2008-03-30 10:36:23.000000000 -0500
++++ src/ExtUtils-Depends-0.300/lib/ExtUtils/Depends.pm	2008-08-22 15:19:25.733479000 -0500
+@@ -302,7 +302,7 @@
+ 
+ 	my %mappers = (
+ 		MSWin32 => sub { $_[0] . '.lib' },
+-		cygwin  => sub { 'lib' . $_[0] . '.dll.a'},
++		cygwin  => sub { $_[0] . '.dll'},
+ 	);
+ 	my $mapper = $mappers{$^O};
+ 	return () unless defined $mapper;
+@@ -313,15 +313,17 @@
+ 		my $lib = $mapper->($stem);
+ 		my $pattern = qr/$lib$/;
+ 
++		my $matching_dir;
+ 		my $matching_file;
+ 		find (sub {
+ 			if ((not $matching_file) && /$pattern/) {;
++				$matching_dir = $File::Find::dir;
+ 				$matching_file = $File::Find::name;
+ 			}
+ 		}, map { -d $_ ? ($_) : () } @INC); # only extant dirs
+ 
+ 		if ($matching_file && -f $matching_file) {
+-			push @found_libs, $matching_file;
++			push @found_libs, ('-L' . $matching_dir, '-l' . $stem);
+ 			next;
+ 		}
+ 	}
