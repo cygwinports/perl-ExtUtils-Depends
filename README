@@ -7,7 +7,7 @@ Runtime requirements:
   perl-5.10.0-5
 
 Additional build requirements:
-  cygport-0.3.13-1
+  cygport-0.4.0-1
   make-3.81-1
 
 Canonical homepage:
@@ -42,6 +42,9 @@ Files included in the binary package:
 -------------------------------------------
 
 Port Notes:
+
+----- version 0.301-1 -----
+Version bump; patch accepted upstream.
 
 ----- version 0.300-2 -----
 Patch to handle linking inter-module dependencies OOTB.
