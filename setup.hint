@@ -1,5 +1,5 @@
 category: Devel Perl
-requires: cygwin perl
+requires: perl
 sdesc: "Build Perl XS that depend on other XS"
 ldesc: "This module tries to make it easy to build Perl extensions that 
 use functions and typemaps provided by other perl extensions."
