@@ -1,0 +1,9 @@
+inherit gtk2-perl
+
+NAME="perl-ExtUtils-Depends"
+VERSION=0.302
+RELEASE=2
+CATEGORY="Perl"
+SUMMARY="Build Perl XS that depend on other XS"
+DESCRIPTION="This module tries to make it easy to build Perl extensions that
+use functions and typemaps provided by other perl extensions."
